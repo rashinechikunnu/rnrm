@@ -60,15 +60,8 @@ frontend/
   app/               pages: /, /about, /services, /projects, /products, /blog, /contact, /privacy, /terms
                      + sitemap.xml, robots.txt, Open Graph image, icons
   components/        reusable UI (Navbar, Footer, cards, hero panels, contact form…)
-  lib/api.ts         the only place content is loaded from
+  lib/api.ts         data access module (loads from seed.json)
   content/seed.json  all site content
   public/brand/      official rnrm logos
   public/work/       project screenshots
-backend/             Django API + admin from the first version — not used by the site
 ```
-
-## Adding a backend later
-
-Pages only read content through the functions in `frontend/lib/api.ts`. To connect a
-backend, replace the bodies of those functions with API calls; no page needs to change.
-The `backend/` folder holds the earlier Django REST API and admin, kept for reference.

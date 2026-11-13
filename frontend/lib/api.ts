@@ -1,12 +1,8 @@
 /**
  * Data access for the website.
  *
- * The site runs without a backend: all content lives in content/seed.json and
- * is bundled at build time. Edit that file to change services, projects,
- * products, blog posts or contact details.
- *
- * Pages only ever call the functions below, so when a backend is added later,
- * swapping these bodies for API calls is the only change needed.
+ * All content lives in content/seed.json and is bundled at build time.
+ * Edit that file to change services, projects, products, blog posts or contact details.
  */
 import { cacheLife } from "next/cache";
 import seed from "@/content/seed.json";
