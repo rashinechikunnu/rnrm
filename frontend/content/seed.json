@@ -1,0 +1,513 @@
+{
+  "content": {
+    "contact_email": {
+      "label": "Contact email address",
+      "value": "hello@rnrmtechnology.com"
+    },
+    "whatsapp_number": {
+      "label": "WhatsApp number (digits only, with country code)",
+      "value": "910000000000"
+    },
+    "location": {
+      "label": "Company location",
+      "value": "India — working with clients worldwide"
+    },
+    "hero_headline": {
+      "label": "Home hero headline",
+      "value": "Building Technology That Moves Businesses Forward."
+    },
+    "hero_text": {
+      "label": "Home hero supporting text",
+      "value": "rnrm Technology designs and builds custom software, web applications and SaaS products that help ambitious companies digitise operations, launch faster and scale with confidence."
+    },
+    "linkedin_url": {
+      "label": "LinkedIn URL",
+      "value": ""
+    },
+    "github_url": {
+      "label": "GitHub URL",
+      "value": ""
+    },
+    "instagram_url": {
+      "label": "Instagram URL",
+      "value": ""
+    },
+    "x_url": {
+      "label": "X (Twitter) URL",
+      "value": ""
+    }
+  },
+  "services": [
+    {
+      "slug": "custom-software-development",
+      "title": "Custom Software Development",
+      "icon": "code",
+      "summary": "Software shaped around the way your business actually works — not the other way round.",
+      "description": "Off-the-shelf tools force you to adapt your process to their limits. We design and build software around your workflows, your data and your growth plans, so the system keeps fitting as the business changes. From internal platforms to customer-facing systems, you own the code and the roadmap.",
+      "benefits": [
+        "A system that fits your process exactly, with nothing you have to work around",
+        "Full ownership of source code and data — no licence lock-in",
+        "Architecture planned for the scale you are growing into",
+        "One accountable team from discovery to long-term support"
+      ],
+      "technologies": [
+        "Python",
+        "Java",
+        "C#",
+        "Go",
+        "Django",
+        ".NET",
+        "PostgreSQL",
+        "MySQL"
+      ],
+      "process": [
+        {
+          "title": "Discover",
+          "text": "We map your workflows, users and constraints, and agree what success looks like."
+        },
+        {
+          "title": "Design",
+          "text": "Architecture, data model and interface prototypes you can click through before code is written."
+        },
+        {
+          "title": "Build",
+          "text": "Short iterations with a working demo at the end of each one."
+        },
+        {
+          "title": "Launch & support",
+          "text": "Deployment, monitoring, training and a clear plan for what comes next."
+        }
+      ]
+    },
+    {
+      "slug": "web-application-development",
+      "title": "Web Application Development",
+      "icon": "globe",
+      "summary": "Fast, secure web applications that feel effortless on every screen.",
+      "description": "We build web applications that load quickly, stay responsive under real traffic and remain easy to extend. Dashboards, portals, booking systems, marketplaces — engineered with a modern React front end and a robust Django back end.",
+      "benefits": [
+        "Responsive interfaces that work on phone, tablet and desktop",
+        "Performance budgets and accessibility built in from the first sprint",
+        "Secure authentication, roles and permissions as standard",
+        "Clean, documented code your future team can maintain"
+      ],
+      "technologies": [
+        "React",
+        "Next.js",
+        "Bootstrap",
+        "JavaScript",
+        "TypeScript",
+        "Django",
+        "Node.js",
+        "Express"
+      ],
+      "process": [
+        {
+          "title": "Scope",
+          "text": "User journeys, feature priorities and a release plan."
+        },
+        {
+          "title": "Prototype",
+          "text": "Interactive UI designs validated with real users."
+        },
+        {
+          "title": "Develop",
+          "text": "Front end and API built in parallel, reviewed and tested continuously."
+        },
+        {
+          "title": "Ship",
+          "text": "Staged rollout, performance checks and handover documentation."
+        }
+      ]
+    },
+    {
+      "slug": "saas-product-development",
+      "title": "SaaS Product Development",
+      "icon": "cloud",
+      "summary": "From idea to subscription-ready product, built on multi-tenant foundations.",
+      "description": "Launching a SaaS product means solving more than features: tenancy, billing, onboarding, permissions and reliability all have to work on day one. We help founders and product teams go from concept to a product customers can sign up for and pay for.",
+      "benefits": [
+        "A focused MVP in the market sooner, with a roadmap behind it",
+        "Multi-tenant architecture that isolates customer data properly",
+        "Subscription billing, plans and trials integrated cleanly",
+        "Usage analytics so product decisions rest on evidence"
+      ],
+      "technologies": [
+        "Django",
+        "FastAPI",
+        "Next.js",
+        "PostgreSQL",
+        "MongoDB",
+        "Redis",
+        "Stripe / Razorpay",
+        "AWS"
+      ],
+      "process": [
+        {
+          "title": "Validate",
+          "text": "Sharpen the problem, the audience and the smallest product worth launching."
+        },
+        {
+          "title": "Architect",
+          "text": "Tenancy, billing and security decisions made early, where they are cheap."
+        },
+        {
+          "title": "Build the MVP",
+          "text": "Core workflows first, released to early users as soon as they are useful."
+        },
+        {
+          "title": "Grow",
+          "text": "Iterate on real usage, harden infrastructure and expand the feature set."
+        }
+      ]
+    },
+    {
+      "slug": "mobile-application-development",
+      "title": "Mobile Application Development",
+      "icon": "smartphone",
+      "summary": "Mobile apps for Android and iOS that people keep on their home screen.",
+      "description": "We build mobile applications that share one codebase across Android and iOS without feeling like a compromise on either. Customer apps, field-team tools and companion apps for existing platforms — backed by the same APIs as your web product.",
+      "benefits": [
+        "One codebase, two platforms — lower cost and faster releases",
+        "Offline-friendly design for teams working in the field",
+        "Push notifications, secure login and device features handled properly",
+        "App Store and Play Store submission managed for you"
+      ],
+      "technologies": [
+        "Flutter",
+        "Dart",
+        "React Native",
+        "JavaScript",
+        "Firebase",
+        "SQLite",
+        "REST APIs"
+      ],
+      "process": [
+        {
+          "title": "Define",
+          "text": "Core use cases, platforms and the experience that matters most on mobile."
+        },
+        {
+          "title": "Design",
+          "text": "Native-feeling screens and flows, tested on real devices."
+        },
+        {
+          "title": "Build",
+          "text": "Feature builds delivered to your phone for feedback every iteration."
+        },
+        {
+          "title": "Release",
+          "text": "Store submission, crash monitoring and a plan for updates."
+        }
+      ]
+    },
+    {
+      "slug": "api-development-integration",
+      "title": "API Development & Integration",
+      "icon": "plug",
+      "summary": "Reliable APIs and integrations that make your systems talk to each other.",
+      "description": "Disconnected systems mean duplicate entry and data nobody trusts. We design well-documented APIs and connect the tools you already use — payment gateways, CRMs, ERPs, messaging and logistics providers — so information moves on its own.",
+      "benefits": [
+        "One source of truth instead of spreadsheets passed between teams",
+        "Documented, versioned APIs that partners can build on",
+        "Secure by design: authentication, rate limiting and audit trails",
+        "Monitoring that tells you when an integration needs attention"
+      ],
+      "technologies": [
+        "FastAPI",
+        "Django REST Framework",
+        "Node.js",
+        "Express",
+        ".NET",
+        "Go",
+        "OAuth 2.0",
+        "Webhooks"
+      ],
+      "process": [
+        {
+          "title": "Audit",
+          "text": "Catalogue systems, data flows and where information gets stuck."
+        },
+        {
+          "title": "Specify",
+          "text": "API contracts agreed and documented before implementation."
+        },
+        {
+          "title": "Implement",
+          "text": "Endpoints and connectors built with automated tests around every contract."
+        },
+        {
+          "title": "Monitor",
+          "text": "Logging, alerts and retries so failures are visible and recoverable."
+        }
+      ]
+    },
+    {
+      "slug": "business-automation-solutions",
+      "title": "Business Automation Solutions",
+      "icon": "workflow",
+      "summary": "Remove repetitive work so your team can spend time on what needs judgement.",
+      "description": "Every business has processes that run on copy-paste, reminders and manual checks. We identify the ones costing the most time and automate them — approvals, invoicing, reporting, notifications, data sync — with clear visibility into what the automation is doing.",
+      "benefits": [
+        "Hours of manual work returned to your team every week",
+        "Fewer errors in billing, reporting and data entry",
+        "Processes that run the same way every time, with a record of each step",
+        "Dashboards that show the state of operations at a glance"
+      ],
+      "technologies": [
+        "Python",
+        "FastAPI",
+        "Node.js",
+        "Celery",
+        "MySQL",
+        "MongoDB",
+        "WhatsApp Business API"
+      ],
+      "process": [
+        {
+          "title": "Map",
+          "text": "Walk through the current process and measure where the time goes."
+        },
+        {
+          "title": "Prioritise",
+          "text": "Pick the automations with the clearest return first."
+        },
+        {
+          "title": "Automate",
+          "text": "Build, test against real cases and run alongside the manual process."
+        },
+        {
+          "title": "Optimise",
+          "text": "Review the results and extend automation to the next process."
+        }
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "slug": "al-zamzam-cooling",
+      "title": "Al ZamZam Cooling",
+      "category": "Business Website",
+      "client": "Al ZamZam Cooling, UAE",
+      "summary": "A service website for an Ajman-based air conditioning and refrigeration company working across the UAE.",
+      "description": "Al ZamZam Cooling provides air conditioning, refrigeration, chiller, freezer and cold room services for commercial and industrial clients across the UAE.\n\nWe delivered a clear, fast website that presents their five service lines, explains who they are, and makes it easy for a customer to get in touch — by enquiry form, phone or WhatsApp.",
+      "challenge": "The company needed an online presence that explains a technical range of services in plain language and turns visitors into enquiries.",
+      "solution": "A structured site with a dedicated page for each service, an about section, office location with directions, and contact and WhatsApp calls to action on every page.",
+      "results": [],
+      "technologies": [],
+      "cover": "/work/alzamzam-cooling.jpg",
+      "screenshots": [],
+      "live_url": "https://www.alzamzamcooling.com",
+      "is_featured": true
+    },
+    {
+      "slug": "fahex-nature-glow",
+      "title": "Fahex Nature Glow",
+      "category": "Brand Website",
+      "client": "Fahex",
+      "summary": "A product website for a herbal skincare brand built around pure Kasthuri Manjal (wild turmeric).",
+      "description": "Fahex Nature Glow is a herbal skincare brand offering 100% natural wild turmeric powder.\n\nWe delivered a product-led brand website with a full-screen hero showcase, product and about pages, and direct contact through WhatsApp.",
+      "challenge": "A new natural-skincare brand needed a website that puts the product first and gives customers a direct way to reach the business.",
+      "solution": "An image-led site with a rotating hero that carries the brand's key messages, a product page, the brand story and a contact page with a WhatsApp shortcut.",
+      "results": [],
+      "technologies": [],
+      "cover": "/work/fahex.jpg",
+      "screenshots": [],
+      "live_url": "https://www.fahex.com",
+      "is_featured": true
+    },
+    {
+      "slug": "operations-dashboard",
+      "title": "Operations Dashboard",
+      "category": "Web Application",
+      "client": "Concept project",
+      "summary": "A real-time operations dashboard that brings orders, dispatch and delivery status into one view.",
+      "description": "A web application concept for logistics teams that replaces scattered spreadsheets with a single live view of operations.\n\nManagers see every order from booking to delivery, filter by route or status, and get alerted when something falls behind.",
+      "challenge": "Operational data lived in several spreadsheets and chat groups, so nobody had a current picture of what was delayed.",
+      "solution": "A role-based dashboard with live status tracking, exception alerts and exportable reports, backed by a single PostgreSQL database and a documented API.",
+      "results": [],
+      "technologies": [
+        "Next.js",
+        "Django REST Framework",
+        "PostgreSQL",
+        "Tailwind CSS"
+      ],
+      "cover": null,
+      "screenshots": [],
+      "live_url": "",
+      "is_featured": true
+    },
+    {
+      "slug": "subscription-billing-platform",
+      "title": "Subscription Billing Platform",
+      "category": "SaaS",
+      "client": "Concept project",
+      "summary": "A multi-tenant SaaS foundation with plans, trials, invoicing and a customer self-service portal.",
+      "description": "A SaaS platform concept covering the parts every subscription product needs before its first customer: tenant isolation, plan management, recurring billing and account self-service.",
+      "challenge": "Early-stage products often bolt billing on late, which leads to manual invoicing and access that does not match what customers pay for.",
+      "solution": "Billing and entitlements designed into the core data model, with payment-gateway webhooks keeping subscriptions and access in sync automatically.",
+      "results": [],
+      "technologies": [
+        "Django",
+        "PostgreSQL",
+        "React",
+        "Razorpay",
+        "Redis"
+      ],
+      "cover": null,
+      "screenshots": [],
+      "live_url": "",
+      "is_featured": true
+    },
+    {
+      "slug": "field-service-mobile-app",
+      "title": "Field Service Mobile App",
+      "category": "Mobile App",
+      "client": "Concept project",
+      "summary": "A cross-platform app that gives field technicians their jobs, checklists and customer history offline.",
+      "description": "A mobile application concept for service teams working on site. Technicians receive assigned jobs, complete checklists, capture photos and signatures, and sync when a connection returns.",
+      "challenge": "Paper job sheets were re-typed at the office, delaying invoices and losing detail along the way.",
+      "solution": "An offline-first mobile app sharing the same API as the office web portal, so a completed job is ready to invoice the moment it syncs.",
+      "results": [],
+      "technologies": [
+        "React Native",
+        "TypeScript",
+        "Django REST Framework",
+        "PostgreSQL"
+      ],
+      "cover": null,
+      "screenshots": [],
+      "live_url": "",
+      "is_featured": false
+    },
+    {
+      "slug": "order-inventory-automation",
+      "title": "Order & Inventory Automation",
+      "category": "Business Automation",
+      "client": "Concept project",
+      "summary": "Automated order intake, stock updates and customer notifications across sales channels.",
+      "description": "An automation concept for a growing retailer: orders from several channels are consolidated, stock levels updated, invoices generated and customers notified on WhatsApp — without manual entry.",
+      "challenge": "Each new sales channel added another place to check for orders and another way for stock counts to drift.",
+      "solution": "An integration layer that pulls orders into one queue, applies business rules and pushes updates to inventory, accounting and messaging systems.",
+      "results": [],
+      "technologies": [
+        "Python",
+        "Celery",
+        "PostgreSQL",
+        "WhatsApp Business API",
+        "Webhooks"
+      ],
+      "cover": null,
+      "screenshots": [],
+      "live_url": "",
+      "is_featured": false
+    }
+  ],
+  "products": [
+    {
+      "slug": "rnrm-flow",
+      "name": "rnrm Flow",
+      "tagline": "Workflow automation for growing teams.",
+      "description": "rnrm Flow turns recurring business processes — approvals, follow-ups, handovers — into clear, trackable workflows. Design a process once, and every request follows it with reminders and a full history.",
+      "features": [
+        {
+          "title": "Visual workflow builder",
+          "text": "Define steps, owners and conditions without writing code."
+        },
+        {
+          "title": "Automatic reminders",
+          "text": "Email and WhatsApp nudges keep work moving."
+        },
+        {
+          "title": "Audit trail",
+          "text": "Every action is recorded with who did it and when."
+        },
+        {
+          "title": "Team dashboards",
+          "text": "See what is waiting, with whom, and for how long."
+        }
+      ],
+      "status": "coming_soon",
+      "pricing": "Early access — enquire for pricing",
+      "website_url": "",
+      "cover": null,
+      "screenshots": []
+    },
+    {
+      "slug": "rnrm-ledger",
+      "name": "rnrm Ledger",
+      "tagline": "Invoicing and billing made simple for service businesses.",
+      "description": "rnrm Ledger helps service businesses send professional invoices, track payments and understand cash flow without a full accounting suite.",
+      "features": [
+        {
+          "title": "GST-ready invoices",
+          "text": "Branded invoices generated in seconds."
+        },
+        {
+          "title": "Payment tracking",
+          "text": "Know what is paid, due and overdue at a glance."
+        },
+        {
+          "title": "Recurring billing",
+          "text": "Schedule retainers and subscriptions once."
+        },
+        {
+          "title": "Client portal",
+          "text": "Clients view and pay invoices online."
+        }
+      ],
+      "status": "coming_soon",
+      "pricing": "Early access — enquire for pricing",
+      "website_url": "",
+      "cover": null,
+      "screenshots": []
+    }
+  ],
+  "posts": [
+    {
+      "slug": "how-to-scope-a-custom-software-project",
+      "title": "How to Scope a Custom Software Project Without Guesswork",
+      "excerpt": "A clear scope is the difference between a project that ships and one that drifts. Here is the approach we use before writing any code.",
+      "body": "Most software projects that run late were under-defined on day one, not badly built. Scoping well is less about writing a long document and more about answering a few questions honestly.\n\n## Start with outcomes, not features\n\nWrite down what should be different in the business once the software is live: orders processed without re-typing, reports available the same day, customers able to help themselves. Features are only useful if they serve one of those outcomes.\n\n## Separate the first release from the full vision\n\nList everything you want, then mark what the first release cannot work without. That short list is your MVP. Everything else goes on a roadmap, where it can be reprioritised as you learn.\n\n## Name the constraints early\n\n- Systems the new software has to integrate with\n- Who will use it, and on which devices\n- Deadlines that are fixed, and the ones that are preferences\n- Compliance or data-residency requirements\n\n## Agree how decisions get made\n\nA single product owner on your side who can say yes or no keeps a project moving. Short iterations with a working demo keep everyone looking at the same thing.\n\nA scope built this way is short, testable and easy to estimate, which is exactly what you want before committing budget.",
+      "cover": null,
+      "tags": [
+        "Planning",
+        "Custom Software"
+      ],
+      "author_name": "rnrm Technology",
+      "published_at": "2026-10-20T09:00:00+05:30",
+      "seo_title": "",
+      "seo_description": ""
+    },
+    {
+      "slug": "build-vs-buy-software",
+      "title": "Build vs Buy: When an Off-the-Shelf Tool Stops Being Enough",
+      "excerpt": "Ready-made software is the right answer more often than agencies admit. These are the signs that it has stopped being the right answer for you.",
+      "body": "Buying software is usually faster and cheaper than building it. For standard needs — email, accounting, payroll — it is almost always the right call. The question changes when the tool starts shaping your business instead of supporting it.\n\n## Signs you have outgrown a tool\n\n- Your team keeps spreadsheets alongside it to cover what it cannot do\n- You pay for several products and move data between them by hand\n- Per-user pricing is growing faster than the value you get\n- The process that makes you different is the one the tool handles worst\n\n## What building actually buys you\n\nCustom software is an asset you own. It models your process precisely, integrates with exactly the systems you use and has no per-seat fee. The trade-off is upfront investment and the responsibility to maintain it.\n\n## A middle path\n\nIt is rarely all or nothing. Keep the standard tools for standard work, and build only the part that is specific to you, connected to the rest through APIs. That is often the highest-return software a company can commission.",
+      "cover": null,
+      "tags": [
+        "Strategy",
+        "SaaS"
+      ],
+      "author_name": "rnrm Technology",
+      "published_at": "2026-10-28T09:00:00+05:30",
+      "seo_title": "",
+      "seo_description": ""
+    },
+    {
+      "slug": "why-api-first-matters",
+      "title": "What an API-First Approach Actually Gives Your Business",
+      "excerpt": "API-first is more than an engineering preference. It decides how easily your product can grow new channels, partners and automations.",
+      "body": "In an API-first product, every capability is available through a documented interface before any screen is built on top of it. That sounds like a technical detail, but its effects are commercial.\n\n## One back end, many front ends\n\nYour website, mobile app and admin tools all use the same API. A rule changed once applies everywhere, and adding a new channel does not mean rebuilding the logic behind it.\n\n## Integrations stop being projects\n\nWhen a partner or customer asks to connect their system, the answer is a link to documentation, not a quote for custom work.\n\n## Automation becomes straightforward\n\nAnything a person can do in the interface, a script or workflow can do through the API. That is what makes reporting, notifications and back-office automation cheap to add later.\n\n## What it costs\n\nA little more design effort up front: agreeing contracts, versioning and authentication before building screens. In our experience that effort is repaid the first time a second client application is needed.",
+      "cover": null,
+      "tags": [
+        "APIs",
+        "Architecture"
+      ],
+      "author_name": "rnrm Technology",
+      "published_at": "2026-11-05T09:00:00+05:30",
+      "seo_title": "",
+      "seo_description": ""
+    }
+  ]
+}
