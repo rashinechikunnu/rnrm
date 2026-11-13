@@ -12,15 +12,17 @@ export const metadata = pageMeta({
 });
 
 /** Reads ?service=… at request time so links from service and product pages preselect the dropdown. */
-async function PrefilledForm({ searchParams, services }: { searchParams: PageProps<"/contact">["searchParams"]; services: string[] }) {
+type FormDetails = { services: string[]; whatsappNumber: string; email: string };
+
+async function PrefilledForm({ searchParams, ...details }: FormDetails & { searchParams: PageProps<"/contact">["searchParams"] }) {
   const { service } = await searchParams;
-  return <ContactForm services={services} initialService={typeof service === "string" ? service : ""} />;
+  return <ContactForm {...details} initialService={typeof service === "string" ? service : ""} />;
 }
 
 export default async function ContactPage({ searchParams }: PageProps<"/contact">) {
   const [content, services] = await Promise.all([getContent(), getServices()]);
 
-  const titles = services.map((s) => s.title);
+  const details: FormDetails = { services: services.map((s) => s.title), whatsappNumber: content.whatsapp_number, email: content.contact_email };
 
   const channels = [
     { icon: MessageCircle, title: "WhatsApp", value: "Chat with us directly", href: whatsappLink(content.whatsapp_number), external: true },
@@ -29,12 +31,12 @@ export default async function ContactPage({ searchParams }: PageProps<"/contact"
 
   return (
     <>
-      <PageHero eyebrow="Contact" title="Tell us what you want to build." text="Share a few details about your project. We will reply with next steps — usually within one business day." />
+      <PageHero eyebrow="Contact" title="Tell us what you want to build." text="Share a few details about your project and send them to us on WhatsApp or by email. We usually reply within one business day." />
 
       <section className="bg-mist py-16 sm:py-24">
         <div className="container-page grid gap-10 lg:grid-cols-[1fr_22rem] lg:gap-14">
-          <Suspense fallback={<ContactForm services={titles} />}>
-            <PrefilledForm searchParams={searchParams} services={titles} />
+          <Suspense fallback={<ContactForm {...details} />}>
+            <PrefilledForm searchParams={searchParams} {...details} />
           </Suspense>
 
           <aside className="space-y-4">

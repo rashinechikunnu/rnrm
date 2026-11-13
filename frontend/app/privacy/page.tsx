@@ -15,7 +15,7 @@ export default async function PrivacyPage() {
         {
           heading: "Information we collect",
           paragraphs: [
-            "When you submit the contact form we collect your name, email address, company name (if provided), the service you are interested in and the details of your enquiry. We also record the IP address the enquiry was sent from, to protect the form against abuse.",
+            "The contact form does not store anything on this website. It prepares a message containing your name, email address, company name (if provided), the service you are interested in and the details of your enquiry, which you then send to us yourself through WhatsApp or email.",
             "If analytics is enabled on this website, we collect aggregated, non-identifying usage information such as pages visited and approximate location.",
           ],
         },
@@ -28,7 +28,7 @@ export default async function PrivacyPage() {
         {
           heading: "Storage and security",
           paragraphs: [
-            "Enquiries are stored in our own database with access limited to authorised rnrm Technology staff. We apply technical and organisational measures to protect personal information against unauthorised access, loss or misuse.",
+            "Enquiries reach us through WhatsApp or email and are kept in those accounts, with access limited to authorised rnrm Technology staff. We take reasonable measures to protect personal information against unauthorised access, loss or misuse.",
           ],
         },
         {

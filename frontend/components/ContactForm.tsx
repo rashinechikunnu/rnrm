@@ -1,14 +1,13 @@
 "use client";
 
-import { useState, type FormEvent } from "react";
-import { CircleAlert, CircleCheck, LoaderCircle, Send } from "lucide-react";
+import { useState } from "react";
+import { CircleAlert, CircleCheck, Mail, MessageCircle } from "lucide-react";
 
-const API_URL = (process.env.NEXT_PUBLIC_API_URL ?? "http://127.0.0.1:8000/api").replace(/\/$/, "");
-
-type Fields = { name: string; email: string; company: string; service: string; message: string; website: string };
+type Fields = { name: string; email: string; company: string; service: string; message: string };
 type Errors = Partial<Record<keyof Fields, string>>;
+type Channel = "whatsapp" | "email";
 
-const empty: Fields = { name: "", email: "", company: "", service: "", message: "", website: "" };
+const empty: Fields = { name: "", email: "", company: "", service: "", message: "" };
 
 function validate(values: Fields): Errors {
   const errors: Errors = {};
@@ -19,21 +18,39 @@ function validate(values: Fields): Errors {
   return errors;
 }
 
-export function ContactForm({ services, initialService = "" }: { services: string[]; initialService?: string }) {
+/** The enquiry as plain text, ready to drop into a WhatsApp chat or an email. */
+function compose(values: Fields) {
+  return [
+    "New project enquiry",
+    "",
+    `Name: ${values.name.trim()}`,
+    `Email: ${values.email.trim()}`,
+    ...(values.company.trim() ? [`Company: ${values.company.trim()}`] : []),
+    `Service: ${values.service}`,
+    "",
+    values.message.trim(),
+  ].join("\n");
+}
+
+/**
+ * There is no server behind this form. On submit it validates the fields, then
+ * opens the visitor's WhatsApp or email app with the enquiry already written,
+ * addressed to rnrm Technology. The visitor presses send there.
+ */
+export function ContactForm({ services, initialService = "", whatsappNumber, email }: { services: string[]; initialService?: string; whatsappNumber: string; email: string }) {
   // A service (or product) name can arrive from a "Discuss this service" link.
   const preset = initialService.trim().slice(0, 120);
   const options = preset && !services.includes(preset) ? [...services, preset] : services;
   const [values, setValues] = useState<Fields>({ ...empty, service: preset });
   const [errors, setErrors] = useState<Errors>({});
-  const [state, setState] = useState<"idle" | "sending" | "sent" | "failed">("idle");
+  const [openedIn, setOpenedIn] = useState<Channel | null>(null);
 
   const set = (field: keyof Fields) => (e: { target: { value: string } }) => {
     setValues((v) => ({ ...v, [field]: e.target.value }));
     if (errors[field]) setErrors((prev) => ({ ...prev, [field]: undefined }));
   };
 
-  async function onSubmit(e: FormEvent<HTMLFormElement>) {
-    e.preventDefault();
+  function send(channel: Channel) {
     const found = validate(values);
     setErrors(found);
     const firstInvalid = Object.keys(found)[0];
@@ -41,39 +58,34 @@ export function ContactForm({ services, initialService = "" }: { services: strin
       document.getElementById(`cf-${firstInvalid}`)?.focus();
       return;
     }
-    setState("sending");
-    try {
-      const res = await fetch(`${API_URL}/enquiries/`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body: JSON.stringify(values),
-      });
-      if (res.status === 400) {
-        // Server-side validation is the source of truth; show its messages on the fields.
-        const data: Record<string, string[]> = await res.json();
-        setErrors(Object.fromEntries(Object.entries(data).map(([k, v]) => [k, v[0]])));
-        setState("idle");
-        return;
-      }
-      if (!res.ok) throw new Error(String(res.status));
-      setValues(empty);
-      setState("sent");
-    } catch {
-      setState("failed");
-    }
+    const text = compose(values);
+    const url =
+      channel === "whatsapp"
+        ? `https://wa.me/${whatsappNumber.replace(/\D/g, "")}?text=${encodeURIComponent(text)}`
+        : `mailto:${email}?subject=${encodeURIComponent(`Project enquiry — ${values.service}`)}&body=${encodeURIComponent(text)}`;
+    if (channel === "whatsapp") window.open(url, "_blank", "noopener,noreferrer");
+    else window.location.href = url;
+    setOpenedIn(channel);
   }
 
-  if (state === "sent") {
+  if (openedIn) {
     return (
       <div role="status" className="flex flex-col items-start rounded-2xl border border-line bg-white p-8 sm:p-10">
         <span className="grid size-14 place-items-center rounded-xl bg-brand text-white">
           <CircleCheck aria-hidden className="size-7" />
         </span>
-        <h2 className="mt-6 text-2xl font-semibold">Thank you — your enquiry is with us.</h2>
-        <p className="mt-3 max-w-md leading-relaxed text-body">We read every message and will reply to the email address you provided, usually within one business day.</p>
-        <button type="button" onClick={() => setState("idle")} className="mt-6 text-sm font-semibold text-brand underline-offset-4 hover:underline">
-          Send another message
-        </button>
+        <h2 className="mt-6 text-2xl">Almost done — press send in {openedIn === "whatsapp" ? "WhatsApp" : "your email app"}.</h2>
+        <p className="mt-3 max-w-md leading-relaxed text-body">
+          Your enquiry is written out and addressed to us. It reaches us once you send it from {openedIn === "whatsapp" ? "WhatsApp" : "your email app"}.
+        </p>
+        <div className="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-sm font-semibold text-brand">
+          <button type="button" onClick={() => send(openedIn)} className="underline-offset-4 hover:underline">
+            It didn’t open — try again
+          </button>
+          <button type="button" onClick={() => setOpenedIn(null)} className="underline-offset-4 hover:underline">
+            Back to the form
+          </button>
+        </div>
       </div>
     );
   }
@@ -102,7 +114,14 @@ export function ContactForm({ services, initialService = "" }: { services: strin
     );
 
   return (
-    <form onSubmit={onSubmit} noValidate className="rounded-2xl border border-line bg-white p-6 shadow-card sm:p-10">
+    <form
+      onSubmit={(e) => {
+        e.preventDefault();
+        send("whatsapp");
+      }}
+      noValidate
+      className="rounded-2xl border border-line bg-white p-6 shadow-card sm:p-10"
+    >
       <div className="grid gap-6 sm:grid-cols-2">
         <div>
           <label htmlFor="cf-name" className="text-sm font-semibold">
@@ -143,34 +162,27 @@ export function ContactForm({ services, initialService = "" }: { services: strin
           <label htmlFor="cf-message" className="text-sm font-semibold">
             Project description <span className="text-brand">*</span>
           </label>
-          <textarea rows={6} required maxLength={5000} placeholder="What are you looking to build, and what should it achieve?" {...fieldProps("message")} />
+          <textarea rows={6} required maxLength={1500} placeholder="What are you looking to build, and what should it achieve?" {...fieldProps("message")} />
           {error("message")}
         </div>
       </div>
 
-      {/* Honeypot — hidden from people, tempting to bots */}
-      <div aria-hidden className="absolute -left-[9999px] size-px overflow-hidden">
-        <label htmlFor="cf-website">Website</label>
-        <input id="cf-website" name="website" type="text" tabIndex={-1} autoComplete="off" value={values.website} onChange={set("website")} />
-      </div>
-
-      {state === "failed" && (
-        <p role="alert" className="mt-6 flex items-start gap-2 rounded-xl bg-brand-tint p-4 text-sm font-medium text-brand-dark">
-          <CircleAlert aria-hidden className="mt-0.5 size-4 shrink-0" />
-          We could not send your message just now. Your details are still in the form — please try again, or reach us by email or WhatsApp.
-        </p>
-      )}
-
-      <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-        <p className="text-sm text-muted">We only use these details to reply to your enquiry.</p>
-        <button
-          type="submit"
-          disabled={state === "sending"}
-          className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl bg-brand px-7 font-semibold text-white transition-colors hover:bg-brand-dark disabled:cursor-progress disabled:opacity-70"
-        >
-          {state === "sending" ? <LoaderCircle aria-hidden className="size-4 animate-spin" /> : <Send aria-hidden className="size-4" />}
-          {state === "sending" ? "Sending…" : "Send enquiry"}
-        </button>
+      <div className="mt-8 flex flex-col gap-5 border-t border-line pt-7 lg:flex-row lg:items-center lg:justify-between">
+        <p className="max-w-xs text-sm text-muted">Your message opens in WhatsApp or your email app, ready to send. Nothing is stored on this website.</p>
+        <div className="flex flex-col gap-3 sm:flex-row">
+          <button type="submit" className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl bg-brand px-6 font-semibold text-white transition-colors hover:bg-brand-dark">
+            <MessageCircle aria-hidden className="size-4" />
+            Send via WhatsApp
+          </button>
+          <button
+            type="button"
+            onClick={() => send("email")}
+            className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-line bg-white px-6 font-semibold text-ink transition-colors hover:border-ink/40"
+          >
+            <Mail aria-hidden className="size-4" />
+            Send by Email
+          </button>
+        </div>
       </div>
     </form>
   );
