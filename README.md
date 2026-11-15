@@ -1,36 +1,55 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# rnrm Technology — Official Website
 
-## Getting Started
+Corporate website for **rnrm Technology**, built with Next.js (App Router), React, TypeScript, and Tailwind CSS, statically exported and hosted on **GitHub Pages**.
 
-First, run the development server:
+- **Live Website:** [https://rashinechikunnu.github.io/rnrm/](https://rashinechikunnu.github.io/rnrm/)
+- **Repository:** [rashinechikunnu/rnrm](https://github.com/rashinechikunnu/rnrm)
+
+---
+
+## Tech Stack
+
+- **Framework:** [Next.js](https://nextjs.org/) (Static HTML Export `output: 'export'`)
+- **UI & Components:** React 19, TypeScript, Lucide Icons, Framer Motion
+- **Styling:** Tailwind CSS
+- **Deployment:** GitHub Pages via GitHub Actions
+
+---
+
+## Local Development
+
+1. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+2. Start the local development server:
+   ```bash
+   npm run dev
+   ```
+
+3. Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+---
+
+## Production Build & Static Export
+
+To build the static website locally:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm run build
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+This compiles all routes into static HTML, CSS, JavaScript, and asset bundles inside the `./out` directory with the `/rnrm` base path.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Automated GitHub Pages Deployment
 
-## Learn More
+The website deploys automatically on every push to the `main` branch using the GitHub Actions workflow in `.github/workflows/deploy.yml`.
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### One-Time Setup in GitHub Repository:
+1. Navigate to your repository on GitHub: `https://github.com/rashinechikunnu/rnrm`
+2. Go to **Settings** > **Pages**.
+3. Under **Build and deployment** > **Source**, choose **GitHub Actions**.
+4. Push your changes to `main` — GitHub Actions will automatically build and deploy the website.

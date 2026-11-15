@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight, Cloud, Code, Globe, Plug, Smartphone, Workflow, type LucideIcon } from "lucide-react";
 import type { Post, Project, Service } from "@/lib/types";
-import { formatDate } from "@/lib/site";
+import { assetPath, formatDate } from "@/lib/site";
 import { Tag } from "./ui";
 
 const serviceIcons: Record<string, LucideIcon> = { code: Code, globe: Globe, cloud: Cloud, smartphone: Smartphone, plug: Plug, workflow: Workflow };
@@ -73,7 +73,7 @@ export function ProjectCover({
             <span className="ml-3 h-2 w-28 rounded-full bg-ink/[0.07]" />
           </div>
           <div className="relative aspect-[16/10]">
-            <Image src={project.cover} alt={`${project.title} website screenshot`} fill unoptimized priority={priority} sizes="(min-width: 768px) 35vw, 70vw" className="object-cover object-top" />
+            <Image src={assetPath(project.cover)} alt={`${project.title} website screenshot`} fill unoptimized priority={priority} sizes="(min-width: 768px) 35vw, 70vw" className="object-cover object-top" />
           </div>
         </div>
       </div>
@@ -82,7 +82,7 @@ export function ProjectCover({
   if (project.cover) {
     return (
       <div className={`relative overflow-hidden rounded-2xl bg-ink ${className}`}>
-        <Image src={project.cover} alt={`${project.title} screenshot`} fill unoptimized priority={priority} sizes="(min-width: 1024px) 60vw, 100vw" className="object-cover" />
+        <Image src={assetPath(project.cover)} alt={`${project.title} screenshot`} fill unoptimized priority={priority} sizes="(min-width: 1024px) 60vw, 100vw" className="object-cover" />
       </div>
     );
   }

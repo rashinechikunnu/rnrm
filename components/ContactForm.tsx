@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useSearchParams } from "next/navigation";
 import { CircleAlert, CircleCheck, Mail, MessageCircle } from "lucide-react";
 
 type Fields = { name: string; email: string; company: string; service: string; message: string };
@@ -38,8 +39,10 @@ function compose(values: Fields) {
  * addressed to rnrm Technology. The visitor presses send there.
  */
 export function ContactForm({ services, initialService = "", whatsappNumber, email }: { services: string[]; initialService?: string; whatsappNumber: string; email: string }) {
-  // A service (or product) name can arrive from a "Discuss this service" link.
-  const preset = initialService.trim().slice(0, 120);
+  // A service (or product) name can arrive from a "Discuss this service" link or ?service= query param.
+  const searchParams = useSearchParams();
+  const serviceParam = searchParams?.get("service") ?? "";
+  const preset = (initialService || serviceParam).trim().slice(0, 120);
   const options = preset && !services.includes(preset) ? [...services, preset] : services;
   const [values, setValues] = useState<Fields>({ ...empty, service: preset });
   const [errors, setErrors] = useState<Errors>({});

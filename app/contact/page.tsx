@@ -11,15 +11,11 @@ export const metadata = pageMeta({
   path: "/contact",
 });
 
-/** Reads ?service=… at request time so links from service and product pages preselect the dropdown. */
+export const dynamic = "force-static";
+
 type FormDetails = { services: string[]; whatsappNumber: string; email: string };
 
-async function PrefilledForm({ searchParams, ...details }: FormDetails & { searchParams: PageProps<"/contact">["searchParams"] }) {
-  const { service } = await searchParams;
-  return <ContactForm {...details} initialService={typeof service === "string" ? service : ""} />;
-}
-
-export default async function ContactPage({ searchParams }: PageProps<"/contact">) {
+export default async function ContactPage() {
   const [content, services] = await Promise.all([getContent(), getServices()]);
 
   const details: FormDetails = { services: services.map((s) => s.title), whatsappNumber: content.whatsapp_number, email: content.contact_email };
@@ -36,7 +32,7 @@ export default async function ContactPage({ searchParams }: PageProps<"/contact"
       <section className="bg-mist py-16 sm:py-24">
         <div className="container-page grid gap-10 lg:grid-cols-[1fr_22rem] lg:gap-14">
           <Suspense fallback={<ContactForm {...details} />}>
-            <PrefilledForm searchParams={searchParams} {...details} />
+            <ContactForm {...details} />
           </Suspense>
 
           <aside className="space-y-4">

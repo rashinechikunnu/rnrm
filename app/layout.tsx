@@ -6,7 +6,7 @@ import { Navbar } from "@/components/Navbar";
 import { MotionProvider } from "@/components/Reveal";
 import { Analytics, OrganizationJsonLd, WhatsAppButton } from "@/components/sections";
 import { getContent } from "@/lib/api";
-import { site, whatsappLink } from "@/lib/site";
+import { basePath, site, siteOrigin, whatsappLink } from "@/lib/site";
 import "./globals.css";
 
 const inter = Inter({ variable: "--font-inter", subsets: ["latin"], display: "swap" });
@@ -14,7 +14,7 @@ const display = Inter_Tight({ variable: "--font-display-face", subsets: ["latin"
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"], display: "swap" });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(site.url),
+  metadataBase: new URL(siteOrigin),
   title: { default: `${site.name} — Custom Software, Web & SaaS Development`, template: `%s | ${site.name}` },
   description: site.description,
   applicationName: site.name,
@@ -28,13 +28,13 @@ export const metadata: Metadata = {
     "business automation",
     "rnrm Technology",
   ],
-  alternates: { canonical: "/" },
+  alternates: { canonical: `${basePath}/` },
   openGraph: {
     type: "website",
     siteName: site.name,
     title: `${site.name} — ${site.tagline}`,
     description: site.description,
-    url: "/",
+    url: `${basePath}/`,
     locale: "en_IN",
   },
   twitter: { card: "summary_large_image", title: `${site.name} — ${site.tagline}`, description: site.description },

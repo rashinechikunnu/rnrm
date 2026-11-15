@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { assetPath } from "@/lib/site";
 
 /**
  * The official rnrm marks, used untouched.
@@ -8,7 +9,7 @@ import Image from "next/image";
 export function Logo({ variant = "red", size = 44, priority = false }: { variant?: "red" | "disc"; size?: number; priority?: boolean }) {
   return (
     <Image
-      src={variant === "red" ? "/brand/rnrm-ring.png" : "/brand/rnrm-disc.png"}
+      src={assetPath(variant === "red" ? "/brand/rnrm-ring.png" : "/brand/rnrm-disc.png")}
       alt="rnrm Technology logo"
       width={size}
       height={size}

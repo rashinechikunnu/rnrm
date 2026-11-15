@@ -9,6 +9,8 @@ import { Tag } from "@/components/ui";
 import { getPost, getPosts } from "@/lib/api";
 import { formatDate, pageMeta, site } from "@/lib/site";
 
+export const dynamic = "force-static";
+
 export async function generateStaticParams() {
   return (await getPosts()).map((p) => ({ slug: p.slug }));
 }

@@ -10,6 +10,8 @@ import { Button, Tag } from "@/components/ui";
 import { getProject, getProjects } from "@/lib/api";
 import { pageMeta } from "@/lib/site";
 
+export const dynamic = "force-static";
+
 export async function generateStaticParams() {
   return (await getProjects()).map((p) => ({ slug: p.slug }));
 }

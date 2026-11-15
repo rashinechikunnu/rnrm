@@ -4,7 +4,6 @@
  * All content lives in content/seed.json and is bundled at build time.
  * Edit that file to change services, projects, products, blog posts or contact details.
  */
-import { cacheLife } from "next/cache";
 import seed from "@/content/seed.json";
 import type { Post, Product, Project, Service, SiteContent, Testimonial } from "./types";
 
@@ -44,7 +43,5 @@ export async function getTestimonials(): Promise<Testimonial[]> {
 }
 
 export async function getCurrentYear(): Promise<number> {
-  "use cache";
-  cacheLife("days");
   return new Date().getFullYear();
 }
