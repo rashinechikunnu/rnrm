@@ -1,7 +1,9 @@
 import type { NextConfig } from "next";
 
 const isProd = process.env.NODE_ENV === "production";
-const basePath = process.env.BASE_PATH ?? (isProd ? "/rnrm" : "");
+// Set by the deploy workflow from the GitHub Pages config:
+// "/rnrm" on rashinechikunnu.github.io/rnrm, "" on a custom domain.
+const basePath = (process.env.NEXT_PUBLIC_BASE_PATH ?? (isProd ? "/rnrm" : "")).replace(/\/$/, "");
 
 const nextConfig: NextConfig = {
   output: "export",

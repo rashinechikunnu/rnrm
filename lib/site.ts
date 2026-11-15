@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-export const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? (process.env.NODE_ENV === "production" ? "/rnrm" : "");
+export const basePath = (process.env.NEXT_PUBLIC_BASE_PATH ?? (process.env.NODE_ENV === "production" ? "/rnrm" : "")).replace(/\/$/, "");
 
 export const siteOrigin = (process.env.NEXT_PUBLIC_SITE_ORIGIN ?? (process.env.NODE_ENV === "production" ? "https://rashinechikunnu.github.io" : "http://localhost:3000")).replace(/\/$/, "");
 

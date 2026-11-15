@@ -29,6 +29,7 @@ jobs:
           cache: npm
 
       - name: Setup Pages
+        id: pages
         uses: actions/configure-pages@v5
 
       - name: Install dependencies
@@ -37,8 +38,13 @@ jobs:
       - name: Build static website
         run: npm run build
         env:
-          NEXT_PUBLIC_BASE_PATH: /rnrm
-          NEXT_PUBLIC_SITE_ORIGIN: https://rashinechikunnu.github.io
+          # Read from the repo's Pages settings, so the build follows whatever
+          # domain is configured: "/rnrm" on github.io, "" on a custom domain.
+          NEXT_PUBLIC_BASE_PATH: ${{ steps.pages.outputs.base_path }}
+          NEXT_PUBLIC_SITE_ORIGIN: ${{ steps.pages.outputs.origin }}
+
+      - name: Disable Jekyll processing
+        run: touch ./out/.nojekyll
 
       - name: Upload GitHub Pages artifact
         uses: actions/upload-pages-artifact@v3
