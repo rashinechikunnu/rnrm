@@ -1,0 +1,102 @@
+@import "tailwindcss";
+
+/* rnrm Technology brand system */
+@theme inline {
+  --color-brand: #e60019;
+  --color-brand-dark: #c90018;
+  --color-brand-tint: #fdecee;
+  --color-ink: #111111;
+  --color-ink-soft: #1b1b1b;
+  --color-mist: #f8f8f8;
+  --color-panel: #f1f1ef;
+  --color-line: #e6e6e3;
+  --color-muted: #777777;
+  --color-body: #4d4d4d;
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-display-face), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, monospace;
+
+  --shadow-card: 0 1px 2px rgb(17 17 17 / 0.04), 0 10px 30px -14px rgb(17 17 17 / 0.14);
+  --shadow-lift: 0 2px 4px rgb(17 17 17 / 0.05), 0 28px 56px -20px rgb(17 17 17 / 0.28);
+
+  --animate-marquee: marquee 48s linear infinite;
+  @keyframes marquee {
+    to {
+      transform: translateX(-50%);
+    }
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 8.5rem; /* two-row header on mobile and tablet */
+  @media (min-width: 1024px) {
+    scroll-padding-top: 6rem;
+  }
+}
+
+body {
+  background: var(--color-mist);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  letter-spacing: -0.04em;
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+::selection {
+  background: var(--color-brand);
+  color: #ffffff;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-brand);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+@utility container-page {
+  margin-inline: auto;
+  width: 100%;
+  max-width: 82rem;
+  padding-inline: 1.25rem;
+  @media (min-width: 640px) {
+    padding-inline: 2.5rem;
+  }
+}
+
+/* Dark stage used by every page header: black with a red glow rising from one corner. */
+@utility stage {
+  background-color: var(--color-ink);
+  background-image:
+    radial-gradient(60rem 34rem at 88% 118%, rgb(230 0 25 / 0.5), transparent 62%),
+    radial-gradient(34rem 22rem at -6% -20%, rgb(230 0 25 / 0.16), transparent 70%);
+}
+
+/* Frosted panel for content that sits on the dark stage. */
+@utility glass {
+  background-color: rgb(255 255 255 / 0.07);
+  border: 1px solid rgb(255 255 255 / 0.13);
+  backdrop-filter: blur(14px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .animate-marquee {
+    animation: none;
+  }
+}
