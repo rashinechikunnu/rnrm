@@ -20,6 +20,7 @@ export const metadata: Metadata = {
   applicationName: site.name,
   keywords: [
     "software development company India",
+    "software development company UAE",
     "custom software development",
     "web application development",
     "SaaS product development",

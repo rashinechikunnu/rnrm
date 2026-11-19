@@ -97,15 +97,24 @@ export async function Footer() {
                   <span className="break-all sm:whitespace-nowrap">{content.contact_email}</span>
                 </a>
               </li>
-              <li>
-                <a href={whatsappLink(content.whatsapp_number)} target="_blank" rel="noopener noreferrer" className="flex items-start gap-2.5 transition-colors hover:text-brand">
-                  <MessageCircle aria-hidden className="mt-0.5 size-4 shrink-0 text-brand" />
-                  Chat on WhatsApp
-                </a>
-              </li>
+              {[
+                { country: "India", number: content.whatsapp_number },
+                { country: "UAE", number: content.whatsapp_number_uae },
+              ]
+                .filter((wa) => wa.number)
+                .map((wa) => (
+                  <li key={wa.country}>
+                    <a href={whatsappLink(wa.number)} target="_blank" rel="noopener noreferrer" className="flex items-start gap-2.5 transition-colors hover:text-brand">
+                      <MessageCircle aria-hidden className="mt-0.5 size-4 shrink-0 text-brand" />
+                      <span className="sm:whitespace-nowrap">
+                        {wa.country}: {wa.number}
+                      </span>
+                    </a>
+                  </li>
+                ))}
             </ul>
             <p className="text-[0.95rem] leading-relaxed text-body sm:border-l sm:border-line sm:pl-6">
-              A software development company from India, building custom software, web applications and SaaS products for businesses worldwide.
+              A software development company based in India and the UAE, building custom software, web applications and SaaS products for businesses worldwide.
             </p>
           </div>
 

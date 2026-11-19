@@ -2,15 +2,19 @@
   "content": {
     "contact_email": {
       "label": "Contact email address",
-      "value": "hello@rnrmtechnology.com"
+      "value": "rnrmtechnology@gmail.com"
     },
     "whatsapp_number": {
-      "label": "WhatsApp number (digits only, with country code)",
-      "value": "910000000000"
+      "label": "WhatsApp number — India (with country code)",
+      "value": "+91 95673 21992"
+    },
+    "whatsapp_number_uae": {
+      "label": "WhatsApp number — UAE (with country code)",
+      "value": "+971 50 238 2109"
     },
     "location": {
       "label": "Company location",
-      "value": "India — working with clients worldwide"
+      "value": "India, UAE — working with clients worldwide"
     },
     "hero_headline": {
       "label": "Home hero headline",

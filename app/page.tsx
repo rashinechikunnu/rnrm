@@ -39,7 +39,7 @@ const stack = [
 ];
 
 const faqs = [
-  { q: "What kind of companies do you work with?", a: "Startups launching a first product and established businesses replacing manual processes or outgrown tools. We are based in India and work with clients in any time zone." },
+  { q: "What kind of companies do you work with?", a: "Startups launching a first product and established businesses replacing manual processes or outgrown tools. We are based in India and the UAE and work with clients in any time zone." },
   { q: "How does a project start?", a: "With a conversation about your goals. We follow up with a short discovery phase, then a written proposal covering scope, timeline and cost before any commitment." },
   { q: "Who owns the code?", a: "You do. On completion you own the source code and your data, with no licence lock-in." },
   { q: "Which technologies do you use?", a: "We choose the stack that fits the project. On the front end: React, Next.js, Bootstrap and Tailwind CSS. On the back end: Django, FastAPI, Node.js with Express, .NET and Go. For data: PostgreSQL, MySQL, MongoDB and SQLite. For mobile: Flutter and React Native. We work in Python, JavaScript, Java, C#, Go and Dart." },
@@ -64,7 +64,7 @@ export default async function HomePage() {
           <div className="lg:pt-14">
             <p className="max-w-md text-lg leading-relaxed text-white/80">{content.hero_text}</p>
             <p className="mt-5 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-white/60">
-              <span className="font-semibold text-white">Based in India</span>
+              <span className="font-semibold text-white">Based in India, UAE</span>
               <span aria-hidden className="size-1 rounded-full bg-brand" />
               Building for clients worldwide
             </p>
@@ -145,7 +145,7 @@ export default async function HomePage() {
               </ul>
               <Reveal delay={0.15} className="mt-auto grid gap-6 pt-10 sm:grid-cols-[1fr_auto] sm:items-end">
                 <p className="max-w-sm border-l-2 border-brand pl-5 text-lg leading-relaxed text-body">
-                  Good software starts with business goals, not technology alone. We are an emerging company from India that builds with that order in mind.
+                  Good software starts with business goals, not technology alone. We are an emerging company from India and the UAE that builds with that order in mind.
                 </p>
                 <div className="rounded-2xl bg-ink p-6 text-white sm:w-60">
                   <p className="font-display text-5xl font-medium tracking-tight">{services.length}</p>

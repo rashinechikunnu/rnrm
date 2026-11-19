@@ -7,7 +7,7 @@ import { pageMeta } from "@/lib/site";
 
 export const metadata = pageMeta({
   title: "About Us",
-  description: "rnrm Technology is an emerging software development company from India with a long-term vision: to be a trusted technology partner for businesses worldwide.",
+  description: "rnrm Technology is an emerging software development company based in India and the UAE with a long-term vision: to be a trusted technology partner for businesses worldwide.",
   path: "/about",
 });
 
@@ -20,7 +20,7 @@ const values = [
 ];
 
 const journey = [
-  { stage: "Foundation", title: "Starting with a clear focus", text: "rnrm Technology was founded in India to build dependable software for businesses — with a commitment to careful engineering and choosing the right tool for each job." },
+  { stage: "Foundation", title: "Starting with a clear focus", text: "rnrm Technology was founded in India and the UAE to build dependable software for businesses — with a commitment to careful engineering and choosing the right tool for each job." },
   { stage: "Today", title: "Building products and partnerships", text: "We deliver custom software, web applications and automation for clients while developing our own SaaS products alongside them." },
   { stage: "Next", title: "Serving clients across borders", text: "We are structuring our process, communication and delivery to work seamlessly with companies in other countries and time zones." },
   { stage: "Vision", title: "A recognised international technology company", text: "Our long-term goal is a company known globally for reliable engineering, with a portfolio of products used by businesses around the world." },
@@ -32,7 +32,7 @@ export default function AboutPage() {
       <PageHero
         eyebrow="About us"
         title="A young company with a long-term view of technology."
-        text="rnrm Technology is a software development company based in India. We build software that businesses can depend on — and relationships that last longer than any single project."
+        text="rnrm Technology is a software development company based in India and the UAE. We build software that businesses can depend on — and relationships that last longer than any single project."
       />
 
       {/* Introduction */}
@@ -66,7 +66,7 @@ export default function AboutPage() {
               </span>
               <h2 className="mt-8 text-3xl">Our vision</h2>
               <p className="mt-4 text-lg leading-relaxed text-white/75">
-                To become a globally trusted technology company from India — known for software that is reliable, thoughtfully designed and genuinely useful to the businesses that run on it.
+                To become a globally trusted technology company from India and the UAE — known for software that is reliable, thoughtfully designed and genuinely useful to the businesses that run on it.
               </p>
             </article>
           </Reveal>
@@ -121,7 +121,7 @@ export default function AboutPage() {
             <SectionHeading
               tone="dark"
               eyebrow="Our journey"
-              title="From India, with international ambition."
+              title="From India and the UAE, with international ambition."
               text="We are at the beginning of a long road and clear about where it leads: sustainable growth, deeper expertise and clients on every continent."
             />
           </Reveal>

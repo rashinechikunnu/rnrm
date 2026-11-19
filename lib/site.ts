@@ -18,7 +18,7 @@ export const site = {
   origin: siteOrigin,
   url: `${siteOrigin}${basePath}`,
   description:
-    "rnrm Technology is a software development company in India building custom software, web applications, SaaS products, mobile apps and business automation for clients worldwide.",
+    "rnrm Technology is a software development company based in India and the UAE building custom software, web applications, SaaS products, mobile apps and business automation for clients worldwide.",
   tagline: "Building Technology That Moves Businesses Forward.",
 };
 

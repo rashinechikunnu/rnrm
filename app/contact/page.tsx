@@ -21,7 +21,10 @@ export default async function ContactPage() {
   const details: FormDetails = { services: services.map((s) => s.title), whatsappNumber: content.whatsapp_number, email: content.contact_email };
 
   const channels = [
-    { icon: MessageCircle, title: "WhatsApp", value: "Chat with us directly", href: whatsappLink(content.whatsapp_number), external: true },
+    { icon: MessageCircle, title: "WhatsApp — India", value: content.whatsapp_number, href: whatsappLink(content.whatsapp_number), external: true },
+    ...(content.whatsapp_number_uae
+      ? [{ icon: MessageCircle, title: "WhatsApp — UAE", value: content.whatsapp_number_uae, href: whatsappLink(content.whatsapp_number_uae), external: true }]
+      : []),
     { icon: Mail, title: "Email", value: content.contact_email, href: `mailto:${content.contact_email}`, external: false },
   ];
 
