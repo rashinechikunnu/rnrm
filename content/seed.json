@@ -5,12 +5,12 @@
       "value": "rnrmtechnology@gmail.com"
     },
     "whatsapp_number": {
+      "label": "Main WhatsApp number — UAE (with country code). Used by the navbar, floating button and contact form.",
+      "value": "+971 50 238 2109"
+    },
+    "whatsapp_number_india": {
       "label": "WhatsApp number — India (with country code)",
       "value": "+91 95673 21992"
-    },
-    "whatsapp_number_uae": {
-      "label": "WhatsApp number — UAE (with country code)",
-      "value": "+971 50 238 2109"
     },
     "location": {
       "label": "Company location",

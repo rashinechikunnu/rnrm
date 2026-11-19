@@ -98,8 +98,8 @@ export async function Footer() {
                 </a>
               </li>
               {[
-                { country: "India", number: content.whatsapp_number },
-                { country: "UAE", number: content.whatsapp_number_uae },
+                { country: "UAE", number: content.whatsapp_number },
+                { country: "India", number: content.whatsapp_number_india },
               ]
                 .filter((wa) => wa.number)
                 .map((wa) => (
